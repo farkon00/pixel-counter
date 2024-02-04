@@ -1,3 +1,8 @@
+body {
+    background-color: #404040;
+    color: white;
+}
+
 #main_wrapper {
     display: flex;
     flex-direction: row;
@@ -7,17 +12,48 @@
     width: 50vw;
 }
 
-#submit_btn {
-    width: 10vw;
-    aspect-ratio: 15/4;
+.center_elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#main_table tr span {
+#content_inp {
+    width: 90%;
+    height: 80vh;
+    resize: none;
+    font-size: large;
+    margin-bottom: 5%;
+    background-color: #202020;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#submit_btn {
+    min-width: 10vw;
+    min-height: 3vw;
+    background-color: #202020;
+    color: white;
+    font-size: xx-large;
+    border: none;
+    border-radius: 10px;
+}
+
+#main_table {
+    font-size: larger;
+}
+
+#main_table > tr > span {
     text-wrap: nowrap;
 }
 
+#main_table > tr > td:nth-child(1) {
+    text-align: right;
+    color: #BBB;
+}
+
 #sum_text {
-    font-size: larger;
-    color: red;
+    font-size: xx-large;
     font-weight: bold;
 }
