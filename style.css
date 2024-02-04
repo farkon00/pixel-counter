@@ -1,0 +1,23 @@
+#main_wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.ui_half {
+    width: 50vw;
+}
+
+#submit_btn {
+    width: 10vw;
+    aspect-ratio: 15/4;
+}
+
+#main_table tr span {
+    text-wrap: nowrap;
+}
+
+#sum_text {
+    font-size: larger;
+    color: red;
+    font-weight: bold;
+}

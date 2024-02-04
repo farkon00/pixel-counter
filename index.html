@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main_wrapper">
+        <div class="ui_half">
+            <table>
+                <thead>
+                    <tr>
+                        <td id="sum_text">Pixels</td>
+                        <td>Line</td>
+                    </tr>
+                </thead>
+                <tbody id="main_table"></tbody>
+            </table>
+        </div>
+        <div class="ui_half">
+            <textarea id="content_inp" cols="80" rows="45"></textarea><br>
+            <button id="submit_btn">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        let main_table = document.getElementById("main_table");
+        let content_inp = document.getElementById("content_inp");
+        let submit_btn = document.getElementById("submit_btn");
+        
+        submit_btn.addEventListener("click", (e) => {
+            let oldLines = main_table.getElementsByTagName("tr");
+            while (oldLines.length) main_table.removeChild(oldLines[0]);
+
+            let lines = content_inp.value.split("\n");
+            let sum = 0;
+            lines.forEach(line => {
+                main_table.innerHTML += "<tr><td></td><td><span></span></td></tr>";
+                let row = main_table.lastElementChild;
+                row.lastElementChild.firstElementChild.innerText = line;
+                row.firstElementChild.innerText = row.lastElementChild.firstElementChild.offsetWidth;
+                sum += row.lastElementChild.firstElementChild.offsetWidth;
+            });
+            main_table.parentElement.firstElementChild.firstElementChild.firstElementChild.innerText = sum;
+        });
+    </script>
+</body>
+</html>
